@@ -98,7 +98,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         setTimeout(() => {
             bubble.style.opacity = "0";
-        }, 4800);
+        }, 3800); // 3 segundos visível
+
 
         setTimeout(() => {
             badge.style.opacity = "1";
