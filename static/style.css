@@ -1,0 +1,768 @@
+/* ================= RESET ================= */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    padding-top: 140px;
+}
+
+p, h1, h2, h3 {
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+    word-spacing: 2px;
+}
+
+
+/* ================= VARIÁVEIS ================= */
+:root {
+    --lilas: #8A7CFF;
+    --azul: #2D9CDB;
+    --branco: #FFFFFF;
+    --cinza: #f2f2f2;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ================= HEADER ================= */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 25px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: linear-gradient(135deg, var(--azul), var(--lilas));
+    z-index: 1000;
+
+    transition: transform 0.4s ease;
+}
+
+header.hide {
+    transform: translateY(-100%);
+}
+
+/* LOGO */
+.logo {
+    margin-bottom: 15px;
+}
+
+.logo img {
+    width: 160px;
+}
+
+/* MENU */
+.menu {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menu a {
+    background: #eeeeee;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+/* ================= HERO ================= */
+.hero {
+    height: 100vh;
+    padding-top: 5px;
+
+    background: linear-gradient(135deg, var(--azul), var(--lilas));
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    margin-top: -140px;
+}
+
+/* 🔥 NOVO: container da imagem + balões */
+.hero-media {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* imagem central */
+.hero-media img {
+    max-width: 380px;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+/* ================= BALÕES (CARDS) ================= */
+.hero-media .chat-bubble {
+    position: absolute;
+
+    background: white;
+    color: #333;
+
+    padding: 14px 20px;
+    border-radius: 18px;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    max-width: 220px;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+
+    line-height: 1.4;
+
+    opacity: 1;
+    transform: none;
+
+    transition: 0.3s;
+}
+
+.hero-media .chat-bubble::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.b1::after, .b3::after {
+    content: "";
+    position: absolute;
+
+    right: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    border-width: 8px 0 8px 12px;
+    border-style: solid;
+    border-color: transparent transparent transparent white;
+}
+
+.b2::after, .b4::after {
+    content: "";
+    position: absolute;
+
+    left: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    border-width: 8px 12px 8px 0;
+    border-style: solid;
+    border-color: transparent white transparent transparent;
+}
+
+.hero-media .chat-bubble:hover {
+    transform: scale(1.05);
+}
+
+.hero-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* aparece com JS */
+.hero-media .chat-bubble.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 🔥 POSIÇÕES ALEATÓRIAS (use classes diferentes no HTML) */
+
+/* ESQUERDA (bem afastado) */
+.b1 { top: 15%; left: -200px; }
+.b3 { top: 60%; left: -220px; }
+
+/* DIREITA (bem afastado) */
+.b2 { top: 25%; right: -200px; }
+
+/* se quiser mais depois */
+.b4 { top: 70%; right: -220px; }
+
+
+/* ================= BOTÕES ================= */
+.btn {
+    background: white;
+    color: var(--lilas);
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: var(--azul);
+    color: white;
+}
+
+/* ================= SEÇÕES ================= */
+.section {
+    padding: 80px 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* ================= IMAGENS ================= */
+img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* ================= BLOG ================= */
+.blog {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+    align-items: start;
+}
+
+.card {
+    width: 350px;
+    height: 380px; /* altura igual para todos */
+    background: #dfcdf6;
+    border-radius: 15px;
+    padding: 15px;
+    transition: 0.3s;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card img {
+    width: 100%;
+    height: 280px; /* mesma altura para todas as imagens */
+    object-fit: contain; /* mantém proporção sem cortar */
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* ================= LOGOS ================= */
+.logos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.logos img {
+    width: 120px;
+    margin: 10px;
+}
+
+/* ================= DEPOIMENTOS ================= */
+.depoimentos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.depoimentos img {
+    width: 250px;
+    margin: 10px;
+}
+
+/* ================= CTA ================= */
+.cta {
+    background: linear-gradient(135deg, var(--azul), var(--lilas));
+    color: white;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.cta .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    color: white;
+}
+
+/* ================= ANIMAÇÕES ================= */
+.animate {
+    opacity: 1;
+}
+
+.js .animate {
+    opacity: 0;
+    transition: all 0.9s ease;
+}
+
+.js .animate.show {
+    opacity: 1;
+}
+
+.js .zoom {
+    transform: scale(0.8);
+}
+
+.js .zoom.show {
+    transform: scale(1);
+}
+
+/* ================= WHATSAPP ================= */
+
+.whatsapp-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.whatsapp {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background: #25D366;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+    position: relative;
+}
+
+.whatsapp img {
+    width: 75%;
+}
+
+/* badge */
+.badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* ================= KITS VISUAL ================= */
+
+.kits-visual {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 40px;
+    flex-wrap: wrap;
+
+    padding: 40px 20px;
+    border-radius: 20px;
+
+        /* mantém identidade do site */
+        background: #FFFFFF;
+    }
+
+    /* cada kit */
+.kit-item {
+    text-align: center;
+    transition: 0.3s;
+}
+
+/* imagem */
+.kit-item img {
+    width: 180px;
+    height: auto;
+    transition: 0.3s;
+}
+
+/* texto */
+.kit-item p {
+    color: black;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* efeito hover */
+.kit-item:hover img {
+    transform: translateY(-10px) scale(1.05);
+}
+
+/* leve diferença de altura (igual sua referência) */
+.kit-item:nth-child(1) { transform: translateY(20px); }
+.kit-item:nth-child(2) { transform: translateY(0); }
+.kit-item:nth-child(3) { transform: translateY(20px); }
+.kit-item:nth-child(4) { transform: translateY(0); }
+
+/* ================= PROJETOS (MOSAICO) ================= */
+
+.carousel-projetos {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 20px;
+}
+
+.track-projetos {
+    display: flex;
+    gap: 5px; /* diminua aqui */
+    transition: transform 0.4s ease;
+}
+
+/* cada item */
+.carousel-projetos .item {
+    min-width: 250px; /* menor = mais itens visíveis e mais próximos */
+    height: 240px;
+    align-items: center;
+}
+
+.carousel-projetos .item{
+    display: block;
+    margin: 0 auto;
+    max-width: 60%;
+}
+
+/* imagens e vídeos padronizados */
+.carousel-projetos img,
+.carousel-projetos video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+}
+/* BOTÕES */
+.carousel-projetos button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    font-size: 25px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+
+    border-radius: 8px;
+}
+
+/* posição */
+.prev-projetos { left: 10px; }
+.next-projetos { right: 10px; }
+
+/* hover */
+.carousel-projetos button:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+.carousel-banner {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.track-banner {
+    display: flex;
+    transition: transform 0.6s ease;
+}
+
+.track-banner img {
+    width: 100%;
+    flex-shrink: 0;
+    border-radius: 15px;
+}
+
+/* ================= BANNER ================= */
+
+.carousel-banner {
+    position: relative;
+    width: 100%;
+    margin-top: 0;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.track-banner {
+    display: flex;
+    transition: transform 0.6s ease;
+}
+
+.track-banner img {
+    width: 100%;
+    flex-shrink: 0;
+    border-radius: 15px;
+}
+
+/* BOTÕES DO BANNER */
+.carousel-banner button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    font-size: 28px;
+    padding: 12px;
+    cursor: pointer;
+
+    border-radius: 8px;
+    z-index: 10;
+}
+
+/* posições */
+.prev-banner { left: 10px; }
+.next-banner { right: 10px; }
+
+/* hover */
+.carousel-banner button:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+/* BOTÃO HAMBURGUER */
+.menu-toggle {
+    display: none;
+}
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+    * {
+    box-sizing: border-box;
+    }
+
+    body {
+        padding-top: 60px;
+        overflow-x: hidden;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    /* HEADER */
+
+    header {
+        padding: 10px;
+    }
+
+    .top-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .logo {
+        margin-bottom: 8px;
+    }
+
+    .logo img {
+        width: 110px;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
+        align-items: center;
+        text-align: center;
+    }
+
+    .menu a {
+        display: block;
+        width: 90%;
+        padding: 10px;
+        font-size: 14px;
+
+        border-radius: 20px;
+
+        /* 🔥 ESSENCIAL */
+        white-space: normal; /* permite quebrar linha */
+        word-wrap: break-word;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .menu.active {
+        display: flex !important;
+    }
+
+
+    /* HERO */
+    .hero {
+        height: auto;
+        padding: 40px 20px 60px;
+        margin-top: 0;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    /* imagem central */
+    .hero-media img {
+        max-width: 260px;
+    }
+
+    /* 🔥 REMOVE OS BALÕES DO MOBILE (fica poluído) */
+    .hero-media .chat-bubble {
+        display: none;
+    }
+
+    /* BOTÃO */
+    .btn {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    /* SEÇÕES */
+    .section {
+        padding: 50px 15px;
+    }
+
+    /* BLOG */
+    .blog {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 10px;
+    }
+
+    .card {
+        min-width: 220px;
+    }
+
+
+    .card img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* LOGOS */
+    .logos img {
+        width: 90px;
+    }
+
+    /* DEPOIMENTOS */
+    .depoimentos img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* KITS */
+    .kits-visual {
+        gap: 20px;
+        padding: 30px 10px;
+    }
+
+    .kit-item img {
+        width: 120px;
+    }
+
+    /* remove diferença de altura no mobile */
+    .kit-item:nth-child(1),
+    .kit-item:nth-child(2),
+    .kit-item:nth-child(3),
+    .kit-item:nth-child(4) {
+        transform: none;
+    }
+
+    /* CARROSSEL PROJETOS */
+    .carousel-projetos .item {
+        min-width: 160px;
+        height: 150px;
+    }
+
+    .carousel-projetos .item,
+    .carousel-projetos .item2 {
+        min-width: 100px;
+        height: 220px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* BOTÕES MENORES */
+    .carousel-projetos button,
+    .carousel-banner button {
+        font-size: 18px;
+        padding: 8px;
+    }
+
+    .carousel-projetos img,
+    .carousel-projetos video {
+        width: auto;
+        height: 180px;
+        max-width: 100%;
+        object-fit: contain;
+    }
+    /* WHATSAPP */
+    .whatsapp {
+        width: 65px;
+        height: 65px;
+    }
+
+    .badge {
+        width: 18px;
+        height: 18px;
+        font-size: 10px;
+    }
+
+    .carousel-banner {
+    position: relative;
+    width: 100%;
+    margin-top: 0;
+    overflow: hidden;
+    border-radius: 15px;
+    }
+
+    .track-banner {
+        width: 100%;
+    }
+
+    .track-banner img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 0; /* 🔥 ESSENCIAL */
+    }
+
+}
+
