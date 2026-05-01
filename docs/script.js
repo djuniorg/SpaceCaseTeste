@@ -218,18 +218,16 @@ const initProjetosCarousel = () => {
     const gap = 16;
 
     const updateProj = () => {
-        const itemWidth = itemsProj[0].offsetWidth + gap;
-        const containerWidth = carouselProj.offsetWidth;
-        const trackWidth = itemWidth * itemsProj.length - gap;
-        const centerOffset = index * itemWidth - (containerWidth / 2 - itemsProj[0].offsetWidth / 2);
-        const maxOffset = Math.max(0, trackWidth - containerWidth);
-        const translateX = trackWidth <= containerWidth
-            ? (containerWidth - trackWidth) / 2
-            : Math.min(maxOffset, Math.max(0, centerOffset));
+        const carouselStyles = window.getComputedStyle(carouselProj);
+        const paddingLeft = parseFloat(carouselStyles.paddingLeft) || 0;
+        const paddingRight = parseFloat(carouselStyles.paddingRight) || 0;
+        const itemWidth = itemsProj[0].offsetWidth;
+        const stepWidth = itemWidth + gap;
+        const containerWidth = carouselProj.clientWidth - paddingLeft - paddingRight;
+        const activeCenter = index * stepWidth + itemWidth / 2;
+        const translateX = containerWidth / 2 - activeCenter;
 
-        trackProj.style.transform = trackWidth <= containerWidth
-            ? `translateX(${translateX}px)`
-            : `translateX(-${translateX}px)`;
+        trackProj.style.transform = `translateX(${translateX}px)`;
         itemsProj.forEach(item => item.classList.remove('active'));
         itemsProj[index]?.classList.add('active');
     };

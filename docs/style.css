@@ -216,16 +216,27 @@ header.hide {
     width: 100% !important;
     max-width: 100% !important;
     overflow: visible !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
 }
 
 .hero-home .hero-media .track-banner {
     width: 100% !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 .hero-home .hero-media .track-banner img {
     width: 100% !important;
     height: auto !important;
     display: block !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
 }
 
 .hero::before {
@@ -707,7 +718,7 @@ header.hide {
     display: grid;
     grid-template-columns: 1fr;
     gap: 26px;
-    max-width: 980px;
+    max-width: 1180px;
     margin: 0 auto;
     justify-items: center;
 }
@@ -721,13 +732,13 @@ header.hide {
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
-    gap: 18px;
+    gap: 14px;
     width: 100%;
-    max-width: 840px;
+    max-width: 1080px;
     background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.12);
     border-radius: 28px;
-    padding: 18px;
+    padding: 16px;
     overflow: hidden;
 }
 
@@ -745,19 +756,20 @@ header.hide {
 .section-catalogo .catalogo-panel {
     flex: 0 0 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
 }
 
 .section-catalogo .catalogo-column {
-    display: grid;
-    gap: 20px;
+    display: contents;
 }
 
 .section-catalogo .catalogo-image {
     width: 100%;
-    height: auto;
+    height: 220px;
     display: block;
+    object-fit: contain;
+    background: rgba(255,255,255,0.06);
     border-radius: 20px;
     box-shadow: 0 22px 60px rgba(0,0,0,0.14);
 }
@@ -789,7 +801,10 @@ header.hide {
         height: 46px;
     }
     .section-catalogo .catalogo-panel {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .section-catalogo .catalogo-image {
+        height: 180px;
     }
 }
 
@@ -808,18 +823,18 @@ header.hide {
 
 .section-profissao .produto-focus {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-columns: 1.25fr 0.75fr;
     gap: 32px;
     align-items: center;
     margin: 30px auto 0;
-    max-width: 1160px;
+    max-width: 1320px;
     width: 100%;
     justify-items: center;
 }
 
 .section-profissao .profissao-image {
     width: 100%;
-    max-width: 620px;
+    max-width: 780px;
     height: auto;
     display: block;
     border-radius: 24px;
@@ -1192,14 +1207,21 @@ img {
 
 /* ================= PROJETOS (MOSAICO) ================= */
 
+.section.projetos {
+    overflow: hidden;
+}
+
 .carousel-projetos {
     position: relative;
-    overflow: hidden;
-    width: 100%;
-    padding: 20px;
+    overflow: visible;
+    box-sizing: border-box;
+    width: 88%;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 48px 88px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .track-projetos {
@@ -1207,7 +1229,8 @@ img {
     gap: 16px;
     transition: transform 0.4s ease;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    width: max-content;
 }
 
 /* cada item */
@@ -1221,13 +1244,13 @@ img {
     justify-content: center;
     margin: 0 auto;
     transition: transform 0.35s ease, opacity 0.35s ease, filter 0.35s ease;
-    opacity: 0.72;
-    filter: grayscale(15%);
-    transform: scale(0.96);
+    opacity: 0.55;
+    filter: grayscale(35%) brightness(0.72);
+    transform: scale(0.9);
 }
 
 .carousel-projetos .item.active {
-    transform: translateY(-12px) scale(1.24);
+    transform: translateY(-14px) scale(1.28);
     opacity: 1;
     filter: none;
     z-index: 2;
@@ -1241,6 +1264,14 @@ img {
     object-fit: cover;
     border-radius: 14px;
     box-shadow: 0 18px 50px rgba(0,0,0,0.22);
+    transition: filter 0.35s ease, box-shadow 0.35s ease;
+    filter: brightness(0.78) saturate(0.88);
+}
+
+.carousel-projetos .item.active img,
+.carousel-projetos .item.active video {
+    filter: brightness(1.18) saturate(1.18);
+    box-shadow: 0 34px 90px rgba(255,255,255,0.18), 0 30px 80px rgba(0,0,0,0.34);
 }
 
 /* imagens e vídeos padronizados */
@@ -1854,6 +1885,12 @@ form textarea {
     }
 
     /* CARROSSEL PROJETOS */
+    .carousel-projetos {
+        width: 92%;
+        max-width: 620px;
+        padding: 34px 52px;
+    }
+
     .carousel-projetos .item {
         min-width: 160px;
         height: 150px;
