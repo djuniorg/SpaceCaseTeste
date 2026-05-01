@@ -28,34 +28,43 @@ produtos personalizados
 
 <body>
 
-<header id="header">
-    <div class="top-header">
-        <div class="logo">
-            <img src="img/logo 2.png">
+    <header id="header">
+        <div class="top-header">
+            <div class="logo">
+                <img src="img/logo 2.png">
+            </div>
+
+            <!-- BOTÃO HAMBURGUER -->
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         </div>
 
-        <!-- BOTÃO HAMBURGUER -->
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    </div>
+        <nav class="menu" id="menu">
+            <a href="index.html">Inicio</a>
 
-    <nav class="menu" id="menu">
-        <a href="index.html">Inicio</a>
-        <a href="caderno.html">Cadernos</a>
-        <a href="garrafas.html">Garrafas</a>
-        <a href="copos.html">Copos Personalizados</a>
-        <a href="Cuia.html">Cuias</a>
-        <a href="caneta.html">Canetas</a>
-        <a href="kits.html">Kits</a>
-        <a href="blog.html">Blog</a>
-    </nav>
-</header>
+            <div class="dropdown">
+                <a href="#" class="btn-produtos" onclick="toggleDropdown(event)">Produtos ▾</a>
+                <div class="dropdown-content">
+                    <a href="caderno.html">Cadernos</a>
+                    <a href="garrafas.html">Garrafas</a>
+                    <a href="copos.html">Copos</a>
+                    <a href="cuia.html">Cuias</a>
+                    <a href="caneta.html">Canetas</a>
+                </div>
+            </div>
+
+            <a href="kits.html">Brindes</a>
+            <a href="blog.html">Blog</a>
+            <a href="atacado.html">Atacado</a>
+        </nav>
+
+    </header>
 
 
     <section class="hero">
         <div class="container">
             <h1 class="animate type">Cuias Personalizadas</h1>
 
-            <div class="hero-media" style="position: relative; display:inline-block;">
+<div class="hero-media">
                 <img src="img/CUIA.png" style="max-width:350px; width:100%;">
 
                 <div class="chat-bubble b1">Gravação a laser 🔥</div>
@@ -64,7 +73,28 @@ produtos personalizados
             </div>
 
             <p class="animate">Perfeita para presentear ou revender.</p>
-            <a href="https://wa.link/z1anlb" target="_blank" class="btn animate zoom">Solicitar Orçamento</a>
+            <a href="https://wa.link/0vku9t" target="_blank" class="btn animate zoom">Solicitar Orçamento</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="animate">Cuias com estilo</h2>
+
+        <div class="blog">
+            <div class="card animate left">
+                <h3>Acabamento premium</h3>
+                <p>Detalhes que valorizam sua marca e seu presente.</p>
+            </div>
+
+            <div class="card animate zoom">
+                <h3>Ideal para eventos</h3>
+                <p>Perfeito para festas, feiras e lembranças corporativas.</p>
+            </div>
+
+            <div class="card animate right">
+                <h3>Gravação personalizada</h3>
+                <p>Arte exclusiva ou logo com alto contraste e elegância.</p>
+            </div>
         </div>
     </section>
 
@@ -81,7 +111,7 @@ produtos personalizados
     <section class="cta">
         <div class="container">
             <h2 class="animate">Peça agora</h2>
-            <a href="https://wa.link/z1anlb" target="_blank" class="btn animate zoom">Solicitar Orçamento</a>
+            <a href="https://wa.link/0vku9t" target="_blank" class="btn animate zoom">Solicitar Orçamento</a>
         </div>
     </section>
 
@@ -92,13 +122,12 @@ produtos personalizados
     </p>
 </footer>
 
-
     <script src="script.js"></script>
 
     <div class="whatsapp-container">
         <div class="chat-bubble1" id="chatBubble"></div>
 
-        <a href="https://wa.link/z1anlb" target="_blank" class="whatsapp" id="whatsappBtn">
+        <a href="https://wa.link/tlvyb7" target="_blank" class="whatsapp" id="whatsappBtn">
             <img src="img/whats.png">
         </a>
         <span class="badge" id="badge">1</span>
@@ -107,3 +136,4 @@ produtos personalizados
 </body>
 
 </html>
+

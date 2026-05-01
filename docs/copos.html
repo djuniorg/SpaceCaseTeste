@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Copos Personalizado</title>
 <link rel="stylesheet" href="style.css">
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 <link rel="icon" href="img/Copilot_20260422_130623.png" type="image/png">
 
 <meta name="description" content="Copos personalizados, cordões, kit carnaval, wind banner e brindes para eventos. Personalização profissional para empresas e festas.">
@@ -26,27 +27,36 @@ produtos personalizados
 
 <body>
 
-<header id="header">
-    <div class="top-header">
-        <div class="logo">
-            <img src="img/logo 2.png">
+    <header id="header">
+        <div class="top-header">
+            <div class="logo">
+                <img src="img/logo 2.png">
+            </div>
+
+            <!-- BOTÃO HAMBURGUER -->
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         </div>
 
-        <!-- BOTÃO HAMBURGUER -->
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    </div>
+        <nav class="menu" id="menu">
+            <a href="index.html">Inicio</a>
 
-    <nav class="menu" id="menu">
-        <a href="index.html">Inicio</a>
-        <a href="caderno.html">Cadernos</a>
-        <a href="garrafas.html">Garrafas</a>
-        <a href="copos.html">Copos Personalizados</a>
-        <a href="Cuia.html">Cuias</a>
-        <a href="caneta.html">Canetas</a>
-        <a href="kits.html">Kits</a>
-        <a href="blog.html">Blog</a>
-    </nav>
-</header>
+            <div class="dropdown">
+                <a href="#" class="btn-produtos" onclick="toggleDropdown(event)">Produtos ▾</a>
+                <div class="dropdown-content">
+                    <a href="caderno.html">Cadernos</a>
+                    <a href="garrafas.html">Garrafas</a>
+                    <a href="copos.html">Copos</a>
+                    <a href="cuia.html">Cuias</a>
+                    <a href="caneta.html">Canetas</a>
+                </div>
+            </div>
+
+            <a href="kits.html">Brindes</a>
+            <a href="blog.html">Blog</a>
+            <a href="atacado.html">Atacado</a>
+        </nav>
+
+    </header>
 
 
 <section class="hero">
@@ -54,7 +64,16 @@ produtos personalizados
         <h1 class="animate type">Copos Personalizados</h1>
 
         <div class="hero-media" style="position: relative;">
-            <img src="img/COPOS ADWDW.png">
+            <div class="produto-img-center">
+            <model-viewer class="model-viewer-3d" src="img/copo%20vermelho.glb"
+                alt="Copo 3D"
+                auto-rotate
+                camera-controls
+                shadow-intensity="1"
+                exposure="1">
+            </model-viewer>
+        </div>
+
 
             <div class="chat-bubble b1">Alta durabilidade 💪</div>
             <div class="chat-bubble b2">Personalização total 🎨</div>
@@ -62,9 +81,30 @@ produtos personalizados
         </div>
 
         <p class="animate">Transforme seu evento em uma experiência única.</p>
-        <a href="https://wa.link/z1anlb" target="_blank" class="btn animate zoom">Solicitar Orçamento</a>
+        <a href="https://wa.link/p91oag" target="_blank" class="btn animate zoom">Solicitar Orçamento</a>
     </div>
 </section>
+
+<section class="section">
+        <h2 class="animate">Copos personalizados</h2>
+
+        <div class="blog">
+            <div class="card animate left">
+                <h3>Uso cotidiano</h3>
+                <p>Perfeitos para bares, festas e promoções com alta visibilidade.</p>
+            </div>
+
+            <div class="card animate zoom">
+                <h3>Acabamento resistente</h3>
+                <p>Impressões que suportam água e lavagem leve.</p>
+            </div>
+
+            <div class="card animate right">
+                <h3>Identidade visual</h3>
+                <p>Criar peças que transmitam sua marca em cada evento.</p>
+            </div>
+        </div>
+    </section>
 
 <section class="section">
     <h2 class="animate">Diferenciais</h2>
@@ -90,7 +130,7 @@ produtos personalizados
 <section class="cta">
     <div class="container">
         <h2 class="animate">Orçamento rápido</h2>
-        <a href="https://wa.link/z1anlb" target="_blank" class="btn animate zoom">Solicitar Orçamento</a>
+        <a href="https://wa.link/p91oag" target="_blank" class="btn animate zoom">Solicitar Orçamento</a>
     </div>
 </section>
 
@@ -107,7 +147,7 @@ produtos personalizados
 <div class="whatsapp-container">
     <div class="chat-bubble1" id="chatBubble"></div>
 
-    <a href="https://wa.link/z1anlb" target="_blank" class="whatsapp" id="whatsappBtn">
+    <a href="https://wa.link/tlvyb7" target="_blank" class="whatsapp" id="whatsappBtn">
         <img src="img/whats.png">
     </a>
     <span class="badge" id="badge">1</span>
@@ -115,3 +155,5 @@ produtos personalizados
 
 </body>
 </html>
+
+

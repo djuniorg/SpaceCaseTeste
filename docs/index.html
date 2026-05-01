@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SpaceCase</title>
     <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <link rel="icon" href="img/Copilot_20260422_130623.png" type="image/png">
 
     <meta name="description"
@@ -28,49 +29,171 @@ produtos personalizados
 
 <body>
 
-<header id="header">
-    <div class="top-header">
-        <div class="logo">
-            <img src="img/logo 2.png">
+    <header id="header">
+        <div class="top-header">
+            <div class="logo">
+                <img src="img/logo 2.png">
+            </div>
+
+            <!-- BOTÃO HAMBURGUER -->
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         </div>
 
-        <!-- BOTÃO HAMBURGUER -->
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    </div>
+        <nav class="menu" id="menu">
+            <a href="index.html">Inicio</a>
 
-    <nav class="menu" id="menu">
-        <a href="index.html">Inicio</a>
-        <a href="caderno.html">Cadernos</a>
-        <a href="garrafas.html">Garrafas</a>
-        <a href="copos.html">Copos Personalizados</a>
-        <a href="Cuia.html">Cuias</a>
-        <a href="caneta.html">Canetas</a>
-        <a href="kits.html">Kits</a>
-        <a href="blog.html">Blog</a>
-    </nav>
-</header>
-
-
-
-    <section class="hero">
-        <div>
-            <div class="carousel-banner">
-                <button class="prev-banner">&#10094;</button>
-
-                <div class="track-banner">
-                    <img src="img/2.png">
-                    <img src="img/1.png">
+            <div class="dropdown">
+                <a href="#" class="btn-produtos" onclick="toggleDropdown(event)">Produtos ▾</a>
+                <div class="dropdown-content">
+                    <a href="caderno.html">Cadernos</a>
+                    <a href="capas.html">Capas</a>
+                    <a href="garrafas.html">Garrafas</a>
+                    <a href="copos.html">Copos</a>
+                    <a href="cuia.html">Cuias</a>
+                    <a href="caneta.html">Canetas</a>
                 </div>
-
-                <button class="next-banner">&#10095;</button>
             </div>
-            <p class="animate">Soluções para eventos e marcas</p>
-            <a href="https://wa.link/z1anlb" target="_blank" class="btn animate zoom">Solicitar Orçamento</a>
-            <form action=""></form>
-        </div>  
+
+            <a href="kits.html">Brindes</a>
+            <a href="blog.html">Blog</a>
+            <a href="atacado.html">Atacado</a>
+        </nav>
+
+    </header>
+
+
+
+    <section class="hero hero-home">
+        <div class="hero-content">
+            <span class="eyebrow">SpaceCase</span>
+            <h1>Brindes personalizados com estilo espacial</h1>
+            <p>Copos, garrafas, cadernos e kits feitos para sua marca, evento ou festa com acabamento premium e identidade única.</p>
+            <div class="hero-buttons">
+                <a href="kits.html" class="btn">Ver Kits</a>
+                <a href="atacado.html" class="btn btn-outline">Solicitar orçamento</a>
+            </div>
+
+            <div class="hero-features">
+                <div class="feature-card">
+                    <strong>Entrega rápida</strong>
+                    <span>Produção e envio ágil para eventos com prazo curto.</span>
+                </div>
+                <div class="feature-card">
+                    <strong>Acabamento premium</strong>
+                    <span>Material resistente e impressão com cores vibrantes.</span>
+                </div>
+                <div class="feature-card">
+                    <strong>Design exclusivo</strong>
+                    <span>Customização completa para sua marca e seu evento.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-media">
+            <div class="carousel-banner">
+                <div class="track-banner">
+                    <img src="img/BANNER TESTE 3.png">
+                </div>
+            </div>
+        </div>
     </section>
 
+    <!--<section class="section section-highlights">
+        <h2 class="animate">Destaques do nosso catálogo</h2>
+        <div class="highlight-grid">
+            <div class="highlight-card animate left">
+                <h3>Cadernos personalizados</h3>
+                <p>Capas personalizadas, papel de qualidade e acabamento resistente para uso diário.</p>
+            </div>
+            <div class="highlight-card animate zoom">
+                <h3>Garrafas e copos</h3>
+                <p>Produtos práticos para eventos com impressão de alta definição e ótimo custo-benefício.</p>
+            </div>
+            <div class="highlight-card animate right">
+                <h3>Kits corporativos</h3>
+                <p>Combinações prontas para brindes, festas e campanhas com visual impactante.</p>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="hero-produto">
+
+        <div class="produto-card">
+            <h2>Garrafas Personalizadas</h2>
+            <p>Qualidade premium, ideal para brindes e empresas.</p>
+            <a href="garrafas.html" class="btn btn-produtos">Ver catálogo</a>
+        </div>
+
+        <div class="produto-img">
+            <img src="img/garrafas TRANSPARENTE.png" alt="garrafas">
+        </div>
+
+    </section>
+<section class="hero-produto-custom">
+
+    <div class="produto-grid">
+
+        <!-- CARD 1 -->
+        <div class="produto-card-hero produto-card-hero--left-top">
+            <h2>Copos Personalizadas</h2>
+            <p>Copos personalizados são ideais para eternizar momentos, fortalecer marcas e presentear com exclusividade.</p>
+            <a href="copos.html" class="btn btn-produtos">Ver catálogo</a>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="produto-card-hero produto-card-hero--right-top">
+            <h2>Alta Durabilidade</h2>
+            <p>Material resistente e acabamento premium.</p>
+            <a href="copos.html" class="btn btn-produtos" onclick="toggleDropdown(event)">Saiba mais</a>
+        </div>
+
+        <!-- IMAGEM CENTRAL -->
+        <div class="produto-img-center">
+            <img src="img/COPOBRANCO.png" alt="Copos personalizados">
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="produto-card-hero produto-card-hero--left-bottom">
+            <h2>Personalização Total</h2>
+            <p>Crie do seu jeito para sua marca.</p>
+            <a href="copos.html" class="btn btn-produtos">Personalizar</a>
+        </div>
+
+    </div>
+
+</section>
+
     <section class="section">
+        <h2 class="animate">Nossos segmentos</h2>
+
+        <div class="blog">
+            <div class="card animate left">
+                <h3>Cadernos e planners</h3>
+                <img src="img/CADERNOS INICIAL.png" alt="">
+                <p>Layouts personalizados para escolas, marcas e eventos corporativos.</p>
+                <a href="caderno.html" class="btn btn-produtos">Ver Cadernos</a>
+            </div>
+
+            <div class="card animate zoom">
+                <h3>Capinhas Personalizadas</h3>
+                <img src="img/CAPINHAS FEITAS.png" alt="">
+                <p>Capas para celulares com impressão de alta definição e materiais de qualidade.</p>
+                <a href="capas.html" class="btn btn-produtos">Ver Capas</a>
+            </div>
+
+            <div class="card animate right">
+                <h3>Copo 1200ML</h3>
+                <img src="img/12000m.png" alt="">
+                <p>Copo de 1200ml com design exclusivo e acabamento de alto impacto.</p>
+                <a href="copos.html" class="btn btn-produtos">Ver Copos</a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- <section class="section">
         <h2 class="animate">Nossos Produtos</h2>
 
         <div class="blog">
@@ -98,7 +221,7 @@ produtos personalizados
             </div>
 
             <div class="card animate right">
-                <a href="Cuia.html">
+                <a href="cuia.html">
                     <h3>Cuias</h3>
                     <img src="img/cuia.png">
                 </a>
@@ -106,7 +229,7 @@ produtos personalizados
 
             <div class="card animate right">
                 <a href="caneta.html">
-                    <h3>Canetas</h3>    
+                    <h3>Canetas</h3>
                     <img src="img/CANETAS.png">
                 </a>
             </div>
@@ -119,9 +242,9 @@ produtos personalizados
             </div>
 
         </div>
-    </section>
+    </section> -->
 
-    <section class="section">
+    <section class="section projetos">
         <h2 class="animate">Projetos</h2>
 
         <div class="carousel-projetos">
@@ -141,8 +264,6 @@ produtos personalizados
                 <div class="item"><img src="img/whats11.jpeg"></div>
                 <div class="item"><img src="img/whats12.jpeg"></div>
                 <div class="item"><img src="img/whats13.jpeg"></div>
-                <div class="item"><img src="img/whats14.jpeg"></div>
-                <div class="item"><video controls src="img/whats15.mp4"></div>
             </div>
 
             <button class="next-projetos">&#10095;</button>
@@ -150,19 +271,12 @@ produtos personalizados
         </div>
     </section>
 
-    <section class="cta">
-        <div class="container">
-            <h2 class="animate">Fale com um consultor</h2>
-            <a href="https://wa.link/z1anlb" target="_blank" class="btn animate zoom">Solicitar Orçamento</a>
-        </div>
-    </section>
-
-<footer class="footer">
-    <p>© 2026 - SpaceCase</p>
-    <p class="creditos">
-        Desenvolvido por <strong>Dilson Rodrigues</strong> • Design por <strong>João Herbet</strong>
-    </p>
-</footer>
+    <footer class="footer">
+        <p>© 2026 - SpaceCase</p>
+        <p class="creditos">
+            Desenvolvido por <strong>Dilson Rodrigues</strong> • Design por <strong>João Herbet</strong>
+        </p>
+    </footer>
 
 
     <script src="script.js"></script>
@@ -178,3 +292,4 @@ produtos personalizados
 </body>
 
 </html>
+

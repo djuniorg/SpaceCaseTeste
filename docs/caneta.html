@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Canetas</title>
     <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <link rel="icon" href="img/Copilot_20260422_130623.png" type="image/png">
 
     <meta name="description"
@@ -40,14 +41,23 @@ produtos personalizados
 
         <nav class="menu" id="menu">
             <a href="index.html">Inicio</a>
-            <a href="caderno.html">Cadernos</a>
-            <a href="garrafas.html">Garrafas</a>
-            <a href="copos.html">Copos Personalizados</a>
-            <a href="Cuia.html">Cuias</a>
-            <a href="caneta.html">Canetas</a>
-            <a href="kits.html">Kits</a>
+
+            <div class="dropdown">
+                <a href="#" class="btn-produtos" onclick="toggleDropdown(event)">Produtos ▾</a>
+                <div class="dropdown-content">
+                    <a href="caderno.html">Cadernos</a>
+                    <a href="garrafas.html">Garrafas</a>
+                    <a href="copos.html">Copos</a>
+                    <a href="cuia.html">Cuias</a>
+                    <a href="caneta.html">Canetas</a>
+                </div>
+            </div>
+
+            <a href="kits.html">Brindes</a>
             <a href="blog.html">Blog</a>
+            <a href="atacado.html">Atacado</a>
         </nav>
+
     </header>
 
 
@@ -55,8 +65,14 @@ produtos personalizados
         <div class="container">
             <h1 class="animate type">Canetas Personalizadas</h1>
 
-            <div class="hero-media" style="position: relative; display:inline-block;">
-                <img src="img/CANETAS ADWDAS.png" style="max-width:350px; width:100%;">
+<div class="hero-media">
+                <model-viewer class="model-viewer-3d" src="img/caneta.glb"
+                    alt="Caneta 3D"
+                    auto-rotate
+                    camera-controls
+                    shadow-intensity="1"
+                    exposure="1">
+                </model-viewer>
 
                 <div class="chat-bubble b1">Brinde corporativo 🎯</div>
                 <div class="chat-bubble b2">Marca sempre visível 👀</div>
@@ -64,7 +80,28 @@ produtos personalizados
             </div>
 
             <p class="animate">Fortaleça sua marca no dia a day.</p>
-            <a href="https://wa.link/z1anlb" target="_blank" class="btn animate zoom">Solicitar Orçamento</a>
+            <a href="https://wa.link/nt88y8" target="_blank" class="btn animate zoom">Solicitar Orçamento</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="animate">Canetas com identidade</h2>
+
+        <div class="blog">
+            <div class="card animate left">
+                <h3>Marca duradoura</h3>
+                <p>Logos e frases que permanecem visíveis por mais tempo.</p>
+            </div>
+
+            <div class="card animate zoom">
+                <h3>Opções de cores</h3>
+                <p>Modelos variados com acabamento brilhante ou fosco.</p>
+            </div>
+
+            <div class="card animate right">
+                <h3>Brindes corporativos</h3>
+                <p>Perfeitas para eventos, clientes e campanhas promocionais.</p>
+            </div>
         </div>
     </section>
 
@@ -85,7 +122,7 @@ produtos personalizados
     <section class="cta">
         <div class="container">
             <h2 class="animate">Peça agora</h2>
-            <a href="https://wa.link/z1anlb" target="_blank" class="btn animate zoom">Solicitar Orçamento</a>
+            <a href="https://wa.link/nt88y8" target="_blank" class="btn animate zoom">Solicitar Orçamento</a>
         </div>
     </section>
 
@@ -102,7 +139,7 @@ produtos personalizados
     <div class="whatsapp-container">
         <div class="chat-bubble1" id="chatBubble"></div>
 
-        <a href="https://wa.link/z1anlb" target="_blank" class="whatsapp" id="whatsappBtn">
+        <a href="https://wa.link/tlvyb7" target="_blank" class="whatsapp" id="whatsappBtn">
             <img src="img/whats.png">
         </a>
         <span class="badge" id="badge">1</span>
@@ -111,3 +148,4 @@ produtos personalizados
 </body>
 
 </html>
+

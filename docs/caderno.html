@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadernos</title>
     <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <link rel="icon" href="img/Copilot_20260422_130623.png" type="image/png">
 
     <meta name="description"
@@ -28,49 +29,182 @@ produtos personalizados
 
 <body>
 
-<header id="header">
-    <div class="top-header">
-        <div class="logo">
-            <img src="img/logo 2.png">
+    <header id="header">
+        <div class="top-header">
+            <div class="logo">
+                <img src="img/logo 2.png">
+            </div>
+
+            <!-- BOTÃO HAMBURGUER -->
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         </div>
 
-        <!-- BOTÃO HAMBURGUER -->
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    </div>
+        <nav class="menu" id="menu">
+            <a href="index.html">Inicio</a>
 
-    <nav class="menu" id="menu">
-        <a href="index.html">Inicio</a>
-        <a href="caderno.html">Cadernos</a>
-        <a href="garrafas.html">Garrafas</a>
-        <a href="copos.html">Copos Personalizados</a>
-        <a href="Cuia.html">Cuias</a>
-        <a href="caneta.html">Canetas</a>
-        <a href="kits.html">Kits</a>
-        <a href="blog.html">Blog</a>
-    </nav>
-</header>
+            <div class="dropdown">
+                <a href="#" class="btn-produtos" onclick="toggleDropdown(event)">Produtos ▾</a>
+                <div class="dropdown-content">
+                    <a href="caderno.html">Cadernos</a>
+                    <a href="garrafas.html">Garrafas</a>
+                    <a href="copos.html">Copos</a>
+                    <a href="cuia.html">Cuias</a>
+                    <a href="caneta.html">Canetas</a>
+                </div>
+            </div>
+
+            <a href="kits.html">Brindes</a>
+            <a href="blog.html">Blog</a>
+            <a href="atacado.html">Atacado</a>
+        </nav>
+
+    </header>
 
 
     <section class="hero">
         <div class="container">
             <h1 class="animate type">Cadernos Personalizados</h1>
 
-            <div class="hero-media" style="position: relative; display:inline-block;">
-                <img src="img/PAG CADERNO.png" style="max-width:350px; width:100%;">
+            <div class="hero-media">
+                <model-viewer class="model-viewer-3d" src="img/CADERNO 2.glb" alt="Caderno 3D"
+                    auto-rotate
+                    camera-controls
+                    shadow-intensity="1"
+                    exposure="1"
+                    style="max-width:350px; width:100%;">
+                </model-viewer>
 
                 <div class="chat-bubble b1">Totalmente customizável 🎨</div>
                 <div class="chat-bubble b2">Ideal para escolas 📚</div>
                 <div class="chat-bubble b3">Sua marca presente 🧠</div>
-
-                <p class="animate">Criatividade e identidade em cada página.</p>
-                <a href="https://wa.link/z1anlb" target="_blank" class="btn animate zoom">Solicitar Orçamento</a>
             </div>
+
+            <p class="animate">Criatividade e identidade em cada página.</p>
+            <a href="https://wa.link/xxyst1" target="_blank" class="btn animate zoom">Solicitar Orçamento</a>
+        </div>
+    </section>
+
+    <section class="section section-sizes">
+        <div class="sizes-header">
+            <h2 class="animate">Tamanhos disponíveis</h2>
+            <p class="animate">Escolha o formato certo para seu caderno: A4 para impacto, B5 para equilíbrio e A5 para portabilidade.</p>
+        </div>
+        <div class="sizes-grid">
+            <div class="size-card">
+                <span class="eyebrow">Escolha o melhor formato</span>
+                <h3>Do maior ao menor: A4, B5, A5</h3>
+                <ul class="size-list">
+                    <li><strong>A4</strong> — monitores visuais, relatórios e projetos que exigem grande presença.</li>
+                    <li><strong>B5</strong> — o equilíbrio perfeito entre uso diário e conforto no transporte.</li>
+                    <li><strong>A5</strong> — compacto, discreto e ideal para agendas e brindes.</li>
+                </ul>
+                <p>Cada tamanho foi pensado para destacar sua marca com qualidade e praticidade, entregando o melhor fit para escolas, negócios e eventos.</p>
+            </div>
+            <div class="size-image-wrapper">
+                <img src="img/cardenostamanhos.png" alt="Opções de tamanhos A4 B5 A5" class="size-image">
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="animate">Cadernos que impressionam</h2>
+
+        <div class="blog">
+            <div class="card animate left">
+                <h3>Cadernos personalizados</h3>
+                <img src="img/cadernoarte.png" alt="Arte de caderno personalizado" style="width:100%; border-radius: 12px; margin-top: 10px;">
+                <p>Impressão de alta qualidade com opções de acabamento profissional.</p>
+            </div>
+
+            <div class="card animate zoom">
+                <h3>Conteúdo sob medida</h3>
+                <p>Layouts internos adaptáveis para eventos, brindes ou merchandising.</p>
+            </div>
+
+            <div class="card animate right">
+                <h3>Distribuição fácil</h3>
+                <p>Pedidos eficientes para escolas, empresas e feiras promocionais.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-profissao">
+        <h2 class="animate">Profissão em foco</h2>
+        <p class="animate">O caderno ideal para profissionais, equipes e estudantes que querem um produto visualmente forte e com identidade corporativa.</p>
+        <div class="produto-focus">
+            <img src="img/profisao.png" alt="Profissão personalizada" class="profissao-image">
+            <div class="produto-cards">
+                <div class="focus-card">
+                    <span class="eyebrow">Design inteligente</span>
+                    <h3>Capa que fala por si</h3>
+                    <p>Uma imagem poderosa à esquerda mostra como o produto destaca uma marca profissional antes mesmo de abrir a primeira página.</p>
+                </div>
+                <div class="focus-card">
+                    <span class="eyebrow">Memória de marca</span>
+                    <h3>Formato definido para eventos</h3>
+                    <p>Layouts práticos e acabamentos premium criam um caderno que vira lembrança corporativa de alto valor.</p>
+                </div>
+                <div class="focus-card">
+                    <span class="eyebrow">Entrega ágil</span>
+                    <h3>Produção flexível</h3>
+                    <p>Do pedido padrão à customização completa, produzimos cadernos com rapidez para feiras, cursos e lançamentos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-catalogo">
+        <div class="catalogo-inner">
+            <div class="catalogo-text">
+                <span class="eyebrow">Catálogo de artes</span>
+                <h2>Veja as artes do caderno</h2>
+                <p>Explore nossa seleção de capas e layouts em um formato leve e agradável. Use as setas para navegar visualmente pelas opções do catálogo.</p>
+            </div>
+            <div class="catalogo-frame">
+                <button class="catalogo-nav catalogo-nav-left" aria-label="Anterior">◀</button>
+                <div class="catalogo-window">
+                    <div class="catalogo-track">
+                        <div class="catalogo-panel">
+                            <div class="catalogo-column">
+                                <img src="img/catalagocadernos/ARTE-3.png" alt="Catálogo de artes de cadernos" class="catalogo-image">
+                                <img src="img/catalagocadernos/ARTE-3.png" alt="Catálogo de artes de cadernos" class="catalogo-image">
+                            </div>
+                            <div class="catalogo-column">
+                                <img src="img/catalagocadernos/ARTE-6.png" alt="Catálogo de artes de cadernos" class="catalogo-image">
+                                <img src="img/catalagocadernos/ARTE-7.png" alt="Catálogo de artes de cadernos" class="catalogo-image">
+                            </div>
+                        </div>
+                        <div class="catalogo-panel">
+                            <div class="catalogo-column">
+                                <img src="img/catalagocadernos/ARTE-8.png" alt="Catálogo de artes de cadernos" class="catalogo-image">
+                                <img src="img/catalagocadernos/ARTE-10.png" alt="Catálogo de artes de cadernos" class="catalogo-image">
+                            </div>
+                            <div class="catalogo-column">
+                                <img src="img/catalagocadernos/ARTE-11.png" alt="Catálogo de artes de cadernos" class="catalogo-image">
+                                <img src="img/catalagocadernos/ARTE-12.png" alt="Catálogo de artes de cadernos" class="catalogo-image">
+                            </div>
+                        </div>
+                        <div class="catalogo-panel">
+                            <div class="catalogo-column">
+                                <img src="img/catalagocadernos/ARTE-13.png" alt="Catálogo de artes de cadernos" class="catalogo-image">
+                                <img src="img/catalagocadernos/ARTE-3.png" alt="Catálogo de artes de cadernos" class="catalogo-image">
+                            </div>
+                            <div class="catalogo-column">
+                                <img src="img/catalagocadernos/ARTE-5.png" alt="Catálogo de artes de cadernos" class="catalogo-image">
+                                <img src="img/catalagocadernos/ARTE-6.png" alt="Catálogo de artes de cadernos" class="catalogo-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="catalogo-nav catalogo-nav-right" aria-label="Próximo">▶</button>
+            </div>
+        </div>
     </section>
 
     <section class="cta">
         <div class="container">
             <h2 class="animate">Faça seu orçamento</h2>
-            <a href="https://wa.link/z1anlb" target="_blank" class="btn animate zoom">Solicitar Orçamento</a>
+            <a href="https://wa.link/xxyst1" target="_blank" class="btn animate zoom">Solicitar Orçamento</a>
         </div>
     </section>
 
@@ -87,7 +221,7 @@ produtos personalizados
     <div class="whatsapp-container">
         <div class="chat-bubble1" id="chatBubble"></div>
 
-        <a href="https://wa.link/z1anlb" class="whatsapp" id="whatsappBtn" target="_blank">
+        <a href="https://wa.link/tlvyb7" class="whatsapp" id="whatsappBtn" target="_blank">
             <img src="img/whats.png">
         </a>
         <span class="badge" id="badge">1</span>
@@ -96,3 +230,4 @@ produtos personalizados
 </body>
 
 </html>
+
